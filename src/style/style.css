@@ -1,0 +1,73 @@
+.background {
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+}
+
+.cover {
+    height: 100vh;
+    width: 100vw;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.flex-vertical {
+    display: flex;
+    align-items: center;
+}
+.flex-vertical-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-vertical-space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mb-2 {
+    margin-bottom: .2rem;
+}
+
+.mb-5 {
+    margin-bottom: .5rem;
+}
+
+.mr-1 {
+    margin-right: 1rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+}
+
+.mr-5 {
+    margin-right: .5rem;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
