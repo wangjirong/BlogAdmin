@@ -29,8 +29,8 @@
             }
         },
         methods: {
-            userLogin() {
-                login()
+            async userLogin() {
+                await login('/api/manager/login', this.user)
             },
             register() {
                 this.$router.push('/register')

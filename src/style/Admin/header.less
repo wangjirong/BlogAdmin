@@ -1,19 +1,33 @@
-#elHeader{
+#elHeader {
   width: 100vw;
   height: 10vh;
-  background-color: rgba(133,43,42,1);
+  background-color: rgba(133, 43, 42, 1);
   position: fixed;
   left: 0;
   top: 0;
-  .logo{
+z-index: 1600;
+  .logo {
     font-size: 1rem;
     margin-left: 5rem;
     color: white;
   }
-  .user{
+
+  .user {
     margin-right: 5rem;
-    &:hover{
+  animation: rotateAvatar 6s linear infinite;
+    &:hover {
       cursor: pointer;
+      animation: none;
+      transform: rotateZ(0deg);
     }
+  }
+}
+
+@keyframes rotateAvatar {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
   }
 }

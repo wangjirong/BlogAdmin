@@ -1,5 +1,5 @@
 <template>
-    <Spin fix v-show="this.$store.getters.GET_LOADING">
+    <Spin fix v-if="this.$store.getters.GET_LOADING">
         <Icon type="ios-loading" size=18 class="demo-spin-icon-load"></Icon>
         <div>Loading</div>
     </Spin>

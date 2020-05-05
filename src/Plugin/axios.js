@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import store from '../store/index'
+import {Message} from "view-design";
 
 axios.defaults.headers.post['Content-Type'] = ['application/x-www-form-urlencoded', 'application/form-data'];
 axios.defaults.timeout = 1000 * 10;
@@ -11,10 +12,8 @@ axios.defaults.withCredentials = true;
 axios.interceptors.request.use(config => {
     store.dispatch('setLoading', true)
     const token = sessionStorage.getItem('eleToken');
-    // const token = document.cookie.replace(/(?:(?:^|.*;\s*)_ci_ve_\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     if (token)
-        config.headers.Authorization = token;
-
+        config.headers.Authorization = store.state.token
     return config;
 
 }, error => {
@@ -28,10 +27,10 @@ axios.interceptors.response.use(response => {
     return response;
 }, error => {
     store.dispatch('setLoading', false)
-    this.$Message.error(error.response.data);
+    Message.error(error.response.data);
     const status = error.response.status;
     if (status === 401) {
-        this.$Message.error("登录超时，请重新登录");//token过期登录超时
+        Message.error("登录超时，请重新登录");//token过期登录超时
         let cookieArray = document.cookie.split(";");
         for (let i = 0; i < cookieArray.length; i++) {
             if (cookieArray[i].indexOf("_cir_ve_") === (0 || 1)) {

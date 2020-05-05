@@ -12,7 +12,7 @@ export function get(url, params) {
 
 export function post(url, data) {
     return new Promise((resolve, reject) => {
-        axios.post(url, {data}).then(res => {
+        axios.post(url, data).then(res => {
             if (res.status === 200) resolve(res.data)
         }).catch(error => {
             reject(error)
